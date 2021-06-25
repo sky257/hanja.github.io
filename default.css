@@ -1,0 +1,250 @@
+
+body
+{
+    background: #cfd8dc;
+    /*background: linear-gradient(to right, #D3CBB8, #6D6027);*/
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+.checkAllDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.checkAllCheckbox {
+    position: absolute;
+    opacity: 0;
+}
+
+.checkAllLabel{
+
+    width: 30px;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;;
+}
+.checkAllCheckbox:checked + .checkAllLabel {
+    background-color: #5288ff;
+}
+
+.checkAllCheckbox:checked + .checkAllLabel::after {
+    content: "";
+    position: relative;
+    display: block;
+    left: 9px;
+    top: 4px;
+    width: 9px;
+    height: 16px;
+    border: solid blue;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.checkAllTextLabel {
+    cursor: pointer;
+    font-size: 20px;;
+}
+
+/* .hanja_list_container label::before  */
+
+/* 
+.hanja_list_container label:hover::before,
+.hanja_list_container input[type='checkbox']:hover + label::before {
+    background-color: #acc3f5;
+}
+ */
+
+
+
+.expend_btn {
+  display: flex;
+  justify-content: center;
+}
+
+.hanja_select_box
+{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1096px;
+    margin: 0 auto;
+    z-index: 1;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.hanja_list_container{  
+    padding: 5px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    margin-right: 5px;
+}
+.hanja_list_container input[type='checkbox'] {
+    cursor: pointer;
+    opacity: .0;
+    position: absolute;
+    margin-left: 8px;;
+}
+
+.hanja_select_box label{
+    display: flex;
+    cursor: pointer;
+    font-size: 40px;
+    font-family:바탕;
+}
+ 
+.hanja_list_container label::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    border: 0.05em solid black;
+    border-radius: 5px;
+    margin-right: 3px;
+    margin-top:15px;
+    
+}
+
+.hanja_list_container label:hover::before,
+.hanja_list_container input[type='checkbox']:hover + label::before {
+    background-color: #acc3f5;
+}
+
+
+.hanja_list_container input[type='checkbox']:checked + label::before {
+    background-color: #5288ff;
+    content: '\002714';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: 0039b7;
+    
+}
+
+
+
+.selected_hanja_container {
+    border:3px solid #7e94ff;
+}
+
+
+
+.card-container
+{
+    font-family: 'Open Sans', sans serif;
+    font-size: 120px;
+    font-weight: bold;
+    width: 400px;
+    height: 250px;
+    margin: 80px auto;
+    margin-top:20px;
+    border-radius: 10px;
+    perspective: 1400px;
+}
+
+.card
+{
+    position: relative;
+    height: 100%;
+    border-radius: 10px;
+    width: 100%;
+    transform-style: preserve-3d;
+    cursor:pointer;
+}
+
+.front,
+.back
+{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+
+}
+
+.front
+{
+    color: #fff;
+    background: #2196f3;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    font-family:바탕;
+}
+
+.back
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size:60px;
+
+    transform: rotateY(180deg);
+
+    color: #2196f3;
+    background: #fff;
+
+    text-align:center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.menu-container
+{
+	display:flex;
+	/*height:100px;*/
+	justify-content:center;
+	align-items: flex-end;
+
+
+	max-width:60%;
+	margin:0 auto;
+	flex-wrap:wrap;
+
+}
+
+.menu-container div
+{
+	display:flex;
+	background:darkgray;
+	color:white;
+	width:100px;
+	height:35px;
+	text-align:center;
+	margin:10px;
+	cursor:pointer;
+	border-radius: 10px;
+	justify-content:center;
+	align-items: center;
+
+}
+
+.menu-selected{
+	background-color: #2b7be9 !important;
+}
+
+.header{
+
+	width: 100%;
+    /* height: 30px; */
+    text-align: center;
+    background: #075390;
+    color: white;
+    padding: 6px;
+}

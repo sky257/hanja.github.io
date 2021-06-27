@@ -10,7 +10,7 @@ card.addEventListener('click', function () {
 
 function rotateCard(isInit) {
   if (playing) {
-    console.log('playing');
+    // console.log('playing');
     return;
   }
 
@@ -74,7 +74,7 @@ document.addEventListener('keyup', function (e) {
   if (e.key == " ") { //스페이스
     e.preventDefault(); // Prevent the default action
     rotateCard(false);
-    console.log('space');
+    // console.log('space');
   }
 
   //엔터
@@ -229,7 +229,7 @@ function make_live_arr_shuffle() {
   }
 
   shuffle(live_arr);
-  console.log(`make_live_arr_shuffle() : ${live_arr}`);
+  // console.log(`make_live_arr_shuffle() : ${live_arr}`);
 }
 
 function select_rand_no() {
@@ -242,9 +242,9 @@ function select_rand_no() {
   // return rand_no;
   // console.log('select rand no');
   let shift_no = live_arr.shift();
-  console.log('select rand no');
-  console.log('shift_no = ' + shift_no);
-  console.log(live_arr);
+  // console.log('select rand no');
+  // console.log('shift_no = ' + shift_no);
+  // console.log(live_arr);
 
   if (live_arr.length === 0) {
     make_live_arr_shuffle();
@@ -256,6 +256,7 @@ function select_rand_no() {
 
 //앞면 바꾸기
 function changeFront(isInit) {
+  console.log('chnage front');
   // console.log('change front');
   if (!hanja_list_alive_count()) return;//모두 unselected 상태이면 현재 선택 상태 그대로 유지... 이 코드가 없으면 무한루프
 
@@ -264,14 +265,17 @@ function changeFront(isInit) {
   $('.front').text(arr[rand_no][question_kind]);
   if (!isInit) {
     playSound("pipe");
+    console.log('pipe sound');
   }
 }
 
 //뒷면 바꾸기
 function changeBack(isInit) {
+  console.log('chnage back');
   $('.back').html(arr[rand_no][0] + "<br>" + arr[rand_no][1]);
   if (!isInit) {
     playSound("ding");
+    console.log('ding sound');
   }
 }
 
@@ -301,7 +305,7 @@ $('.menu-container div').click(function () {
   var id = $(this).attr('id');
   $('.menu-container div').removeClass('menu-selected');
   $(this).addClass('menu-selected');
-  console.log(id);
+  // console.log(id);
   arr = window['arr_' + id];
   cardInit();
 });

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="btn" style='cursor: pointer;'>click</div>
+  <audio id="pipeSound" src="sound/pipe.wav"></audio>  
+</body>
+<script>
+
+let pipeSound = document.getElementById('pipeSound');
+  document.getElementById('btn').addEventListener('click',()=>{
+    console.log('btn');
+    pipeSound.play();
+
+  })
+
+const soundEffect = new Audio();
+
+// onClick of first interaction on page before I need the sounds
+soundEffect.play();
+
+// later on when you actually want to play a sound at any point without user interaction
+soundEffect.src = 'sound/ding.wav';
+soundEffect.play();
+
+
+
+// audio1.load();
+// audio2.load();
+// audio1.play();
+// audio1.on('ended' function(){
+// audio2.play();
+// });
+
+
+
+
+</script>
+</html>

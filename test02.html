@@ -8,14 +8,23 @@
 </head>
 <body>
   <div id="btn" style='cursor: pointer;'>click</div>
-  <audio id="pipeSound" src="sound/pipe.wav"></audio>  
+  <audio id="pipeSound" src="sound/ding.wav"></audio>  
 </body>
 <script>
 
-let pipeSound = document.getElementById('pipeSound');
-  document.getElementById('btn').addEventListener('click',()=>{
+  const pipeSound = document.getElementById('pipeSound');
+  const btn =   document.getElementById('btn');
+  btn.addEventListener('click',(e)=>{
     console.log('btn');
     pipeSound.play();
+    btn.style.color = 'red';
+    console.log(e);
+    setTimeout(() => {
+      console.log(e);
+      btn.style.color = 'blue';
+      // e.currentTarget.style.color = 'black';
+      console.log('black');
+    }, 1000);
 
   })
 
